@@ -23,6 +23,8 @@ struct {
     AKColorByte (*ToByte)(AKColorFloat color);
 } AKColor_Func;
 
+ARKI_API AKColorFloat AKColor_ToFloat(AKColorByte color);
+ARKI_API AKColorByte AKColor_ToByte(AKColorFloat color);
 void AKColor_BindingFunctions();
 
 #endif

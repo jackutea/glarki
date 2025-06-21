@@ -1,6 +1,6 @@
 #include "AKColor.h"
 
-AKColorFloat ToFloat(AKColorByte color) {
+AKColorFloat AKColor_ToFloat(AKColorByte color) {
     AKColorFloat result;
     result.r = color.r / 255.0f;
     result.g = color.g / 255.0f;
@@ -9,7 +9,7 @@ AKColorFloat ToFloat(AKColorByte color) {
     return result;
 }
 
-AKColorByte ToByte(AKColorFloat color) {
+AKColorByte AKColor_ToByte(AKColorFloat color) {
     AKColorByte result;
     result.r = (unsigned char)(color.r * 255.0f);
     result.g = (unsigned char)(color.g * 255.0f);
@@ -19,6 +19,6 @@ AKColorByte ToByte(AKColorFloat color) {
 }
 
 void AKColor_BindingFunctions() {
-    AKColor_Func.ToByte = ToByte;
-    AKColor_Func.ToFloat = ToFloat;
+    AKColor_Func.ToByte = AKColor_ToByte;
+    AKColor_Func.ToFloat = AKColor_ToFloat;
 }
