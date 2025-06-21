@@ -1,7 +1,7 @@
 #include "lib.h"
 
 int AK_Lib_Run() {
-    AKBindingFunctions();
+    AK_BindFunctions();
 
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -41,7 +41,7 @@ int AK_Lib_Run() {
     glViewport(0, 0, width, height);
 
     // Main loop
-    AKColorByte color = {255, 0, 0, 255}; // Example color
+    AKColorByte color = {0, 0, 0, 255}; // Example color
     SDL_Event event;
     int running = 1;
     while (running) {
@@ -57,6 +57,8 @@ int AK_Lib_Run() {
         AKColorFloat colorFloat = AKColor_Func.ToFloat(color);
         glClearColor(colorFloat.r, colorFloat.g, colorFloat.b, colorFloat.a);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        AK_DrawCube();
 
         // Swap buffers
         SDL_GL_SwapWindow(window);

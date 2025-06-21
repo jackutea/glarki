@@ -3,6 +3,6 @@
 
 #include "AKColor.h"
 
-void AKBindingFunctions();
+void AK_BindFunctions();
 
 #endif

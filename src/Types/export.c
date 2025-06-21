@@ -1,6 +1,6 @@
 #include "export.h"
 
-void AKBindingFunctions() {
+void AK_BindFunctions() {
     AKColor_BindingFunctions();
     // Add other type binding functions here as needed
 }
