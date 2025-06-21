@@ -2,6 +2,10 @@
 #define GLARKI_AKCOLOR_H
 #include <glarki/define.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     unsigned char r; // Red component (0-255)
     unsigned char g; // Green component (0-255)
@@ -26,5 +30,9 @@ struct {
 ARKI_API AKColorFloat AKColor_ToFloat(AKColorByte color);
 ARKI_API AKColorByte AKColor_ToByte(AKColorFloat color);
 void AKColor_BindingFunctions();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
